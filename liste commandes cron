@@ -1,0 +1,6 @@
+crontab -e
+
+*/5 * * * * /usr/bin/python3 /home/user/Bureau/simulateur.py
+
+0 0 1 * * mysql -u user admin serre_db -e "DELETE FROM capteurs WHERE date_mesure < NOW() - INTERVAL 1 MONTH;"
+
